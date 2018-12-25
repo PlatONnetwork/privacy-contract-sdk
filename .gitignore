@@ -1,0 +1,14 @@
+.idea
+.vscode
+.vs
+
+logs
+build
+target
+
+~*.docx
+*.iml
+*.lnk
+
+sftp-config.json
+

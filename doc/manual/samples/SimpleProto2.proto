@@ -1,0 +1,17 @@
+
+syntax = "proto3";
+
+package simpleproto2;
+option java_package = "com.abc.simpleproto2";
+
+message Foo {
+    int32       i32	= 1;
+    float       f	= 2;
+	string		s	= 3;
+}
+
+message Bar {
+    Foo         foo = 1;
+    int32       i32 = 2;
+    float       f   = 3;
+}

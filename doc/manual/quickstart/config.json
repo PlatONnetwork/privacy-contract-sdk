@@ -1,0 +1,8 @@
+{
+  "invitor":"0x60ceca9c1290ee56b98d4e160ef0453f7c40d219",
+  "parties":["0x60ceca9c1290ee56b98d4e160ef0453f7c40d219", "0x3771c08952f96e70af27324de11bb380ec388ec3"],
+  "method-price":{"foo_abs":200},
+  "profit-rules":{"0x60ceca9c1290ee56b98d4e160ef0453f7c40d219":1, "0x3771c08952f96e70af27324de11bb380ec388ec3":2},
+  "urls":{"0x60ceca9c1290ee56b98d4e160ef0453f7c40d219":"DirectNodeServer:default -h 192.168.18.31 -p 10001", "0x3771c08952f96e70af27324de11bb380ec388ec3":"DirectNodeServer:default -h 192.168.18.31 -p 10002"}
+}
+
