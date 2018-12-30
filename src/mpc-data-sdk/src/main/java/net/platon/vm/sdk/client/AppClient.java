@@ -89,7 +89,7 @@ final public class AppClient extends Ice.Application {
                 }
 
                 ///
-                Ice.ObjectAdapter adapter = communicator().createObjectAdapterWithEndpoints("cc", "default -h localhost");
+                Ice.ObjectAdapter adapter = communicator().createObjectAdapterWithEndpoints("cc", "default -h 0.0.0.0");
 
                 adapter.add(new TransactionCallbackI(cfgInfo), communicator().stringToIdentity("TransactionCallbackReceiver"));
                 adapter.add(new TaskCallbackI(cfgInfo), communicator().stringToIdentity("TaskCallbackReceiver"));
