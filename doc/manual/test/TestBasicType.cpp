@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 
-#include "platon_integer.h"
+#include "integer.h"
 
 /*
 Compare Alice and Bob's age.
@@ -11,8 +11,8 @@ Of course, you can return (Alice - Bob) in your own mpc algorithm.
 bool CompareAge(int32_t age1, int32_t age2) {
     std::cout << __FUNCTION__ << " input Alice: " << age1 << " Bob: " << age2 << std::endl;
 
-    platon::mpc::Integer alice_age(age1, ALICE);
-    platon::mpc::Integer bob_age(age2, BOB);
+    emp::Integer alice_age(age1, emp::ALICE);
+    emp::Integer bob_age(age2, emp::BOB);
 
     int32_t ret = (alice_age - bob_age).reveal_int();
     std::cout << __FUNCTION__ << " result(=Alice-bob): " << ret << std::endl;
@@ -27,8 +27,8 @@ Return true, if Alice >= Bob.
 bool YaoMillionairesProblem(int32_t money1, int32_t money2) {
     std::cout << __FUNCTION__ << " input Alice: " << money1 << " Bob: " << money2 << std::endl;
 
-    platon::mpc::Integer alice_money(money1, ALICE);
-    platon::mpc::Integer bob_money(money2, BOB);
+    emp::Integer alice_money(money1, emp::ALICE);
+    emp::Integer bob_money(money2, emp::BOB);
 
     int32_t ret = (alice_money - bob_money).reveal_int();
     std::cout << __FUNCTION__ << " result(=Alice-Bob): " << ret << std::endl;
@@ -43,8 +43,8 @@ Basic test for integer, int8 int16 int32 int64. + - * / % & | ^.
 Type2 Test##Type1##Op(Type2 a, Type2 b) {\
 std::cout << __FUNCTION__ << " input Alice: " << a << " Bob: " << b << std::endl;\
 \
-platon::mpc::Integer x(a, ALICE);\
-platon::mpc::Integer y(b, BOB);\
+emp::Integer x(a, emp::ALICE);\
+emp::Integer y(b, emp::BOB);\
 \
 Type2 ret = (x Sym y).reveal_int();\
 std::cout << __FUNCTION__ << " result(=Alice "#Sym" Bob): " << ret << std::endl;\

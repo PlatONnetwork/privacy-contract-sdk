@@ -1,0 +1,12 @@
+
+syntax = "proto3";
+option optimize_for = LITE_RUNTIME;
+
+package multiproto;
+option java_package = "com.abc.multiproto";
+
+message Foo {
+    int32       i32 = 1;
+    float       f   = 2;
+    string      s   = 3;
+}

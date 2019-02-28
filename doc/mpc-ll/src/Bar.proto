@@ -1,0 +1,11 @@
+
+syntax = "proto3";
+
+package multiproto;
+option java_package = "com.abc.multiproto";
+
+message Bar {
+    int32       i32 = 1;
+    float       f   = 2;
+    string      s   = 3;
+}

@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "platon_integer.h"
+#include "integer.h"
 
 #include "code/SimpleProto2.pb.h"
 using namespace simpleproto2;
@@ -10,14 +10,14 @@ Bar TestBarAdd01(const Bar& a, const Bar& b) {
 	std::cout << __FUNCTION__ << " Bar Alice: " << a.i32() << " Bob: " << b.i32() << std::endl;
 	std::cout << __FUNCTION__ << " Bar.Foo Alice: " << a.foo().i32() << " Bob: " << b.foo().i32() << std::endl;
 
-	platon::mpc::Integer x(a.i32(), ALICE);
-	platon::mpc::Integer y(b.i32(), BOB);
+	emp::Integer x(a.i32(), emp::ALICE);
+	emp::Integer y(b.i32(), emp::BOB);
 
 	int ret = (x + y).reveal_int();
 	std::cout << __FUNCTION__ << " Bar result(=Alice+Bob): " << ret << std::endl;
 
-	platon::mpc::Integer x1(a.foo().i32(), ALICE);
-	platon::mpc::Integer y1(b.foo().i32(), BOB);
+	emp::Integer x1(a.foo().i32(), emp::ALICE);
+	emp::Integer y1(b.foo().i32(), emp::BOB);
 
 	int ret1 = (x1 + y1).reveal_int();
 	std::cout << __FUNCTION__ << " Bar.Foo result(=Alice+Bob): " << ret << std::endl;

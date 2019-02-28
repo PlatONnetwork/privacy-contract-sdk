@@ -1,11 +1,14 @@
 package net.platon.mpc.proxy.sdk;
 
 import com.google.protobuf.CodedInputStream;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 public class Data {
+    private static final Logger logger = LoggerFactory.getLogger(Data.class.getName());
 
     public static double getDouble(byte[] val) {
         ByteArrayInputStream bais = new ByteArrayInputStream(val);
@@ -13,7 +16,8 @@ public class Data {
         try {
             return cis.readDouble();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return 0.0;
     }
@@ -24,7 +28,8 @@ public class Data {
         try {
             return cis.readFloat();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return 0.0f;
     }
@@ -35,7 +40,8 @@ public class Data {
         try {
             return cis.readUInt64();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return 0;
     }
@@ -46,7 +52,8 @@ public class Data {
         try {
             return cis.readInt64();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return 0;
     }
@@ -57,7 +64,8 @@ public class Data {
         try {
             return cis.readUInt32();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return 0;
     }
@@ -68,7 +76,8 @@ public class Data {
         try {
             return cis.readInt32();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return 0;
     }
@@ -79,7 +88,8 @@ public class Data {
         try {
             return cis.readBool();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return false;
     }
@@ -90,7 +100,8 @@ public class Data {
         try {
             return cis.readString();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return "";
     }

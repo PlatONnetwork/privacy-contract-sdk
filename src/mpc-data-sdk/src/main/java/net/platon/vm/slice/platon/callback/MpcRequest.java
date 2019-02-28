@@ -34,6 +34,8 @@ public class MpcRequest implements java.lang.Cloneable, java.io.Serializable
 
     public String[] peers;
 
+    public int index;
+
     public MpcRequest()
     {
         customer = "";
@@ -43,7 +45,7 @@ public class MpcRequest implements java.lang.Cloneable, java.io.Serializable
         role = net.platon.vm.slice.platon.MPCRole.PART_ALICE;
     }
 
-    public MpcRequest(String customer, String task_id, String ir_hash, String method, net.platon.vm.slice.platon.MPCRole role, String[] peers)
+    public MpcRequest(String customer, String task_id, String ir_hash, String method, net.platon.vm.slice.platon.MPCRole role, String[] peers, int index)
     {
         this.customer = customer;
         this.task_id = task_id;
@@ -51,6 +53,7 @@ public class MpcRequest implements java.lang.Cloneable, java.io.Serializable
         this.method = method;
         this.role = role;
         this.peers = peers;
+        this.index = index;
     }
 
     public boolean
@@ -107,6 +110,10 @@ public class MpcRequest implements java.lang.Cloneable, java.io.Serializable
             {
                 return false;
             }
+            if(index != _r.index)
+            {
+                return false;
+            }
 
             return true;
         }
@@ -125,6 +132,7 @@ public class MpcRequest implements java.lang.Cloneable, java.io.Serializable
         __h = IceInternal.HashUtil.hashAdd(__h, method);
         __h = IceInternal.HashUtil.hashAdd(__h, role);
         __h = IceInternal.HashUtil.hashAdd(__h, peers);
+        __h = IceInternal.HashUtil.hashAdd(__h, index);
         return __h;
     }
 
@@ -152,6 +160,7 @@ public class MpcRequest implements java.lang.Cloneable, java.io.Serializable
         __os.writeString(method);
         net.platon.vm.slice.platon.MPCRole.__write(__os, role);
         net.platon.vm.slice.platon.StringListHelper.write(__os, peers);
+        __os.writeInt(index);
     }
 
     public void
@@ -163,6 +172,7 @@ public class MpcRequest implements java.lang.Cloneable, java.io.Serializable
         method = __is.readString();
         role = net.platon.vm.slice.platon.MPCRole.__read(__is);
         peers = net.platon.vm.slice.platon.StringListHelper.read(__is);
+        index = __is.readInt();
     }
 
     static public void
@@ -191,5 +201,5 @@ public class MpcRequest implements java.lang.Cloneable, java.io.Serializable
     
     private static final MpcRequest __nullMarshalValue = new MpcRequest();
 
-    public static final long serialVersionUID = -1939509038L;
+    public static final long serialVersionUID = -1641137333L;
 }

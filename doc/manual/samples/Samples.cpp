@@ -1,7 +1,7 @@
 #include <cmath>
 #include <iostream>
 
-#include "platon_integer.h"
+#include "integer.h"
 
 #include "code/Samples.pb.h"
 using namespace sample;
@@ -22,8 +22,8 @@ Of course, you can return (Alice - Bob) in your own mpc algorithm.
 bool CompareAge(int age1, int age2) {
 	std::cout << __FUNCTION__ << " Alice: " << age1 << " Bob: " << age2 << std::endl;
 
-	platon::mpc::Integer alice_age(age1, ALICE);
-	platon::mpc::Integer bob_age(age2, BOB);
+	emp::Integer alice_age(age1, emp::ALICE);
+	emp::Integer bob_age(age2, emp::BOB);
 
 	int ret = (alice_age - bob_age).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice-bob): " << ret << std::endl;
@@ -38,8 +38,8 @@ Return true, if Alice >= Bob.
 bool YaoMillionairesProblem(int money1, int money2) {
 	std::cout << __FUNCTION__ << " Alice: " << money1 << " Bob: " << money2 << std::endl;
 
-	platon::mpc::Integer alice_money(money1, ALICE);
-	platon::mpc::Integer bob_money(money2, BOB);
+	emp::Integer alice_money(money1, emp::ALICE);
+	emp::Integer bob_money(money2, emp::BOB);
 
 	int ret = (alice_money - bob_money).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice-Bob): " << ret << std::endl;
@@ -55,12 +55,12 @@ int EuclideanDistance(const Point& p1, const Point& p2) {
 	std::cout << __FUNCTION__ << " Point1: x" << p1.x() << " y: " << p1.y() << std::endl;
 	std::cout << __FUNCTION__ << " Point2: x" << p2.x() << " y: " << p2.y() << std::endl;
 
-	platon::mpc::Integer x1(p1.x(), ALICE);
-	platon::mpc::Integer y1(p1.y(), ALICE);
-	platon::mpc::Integer x2(p2.x(), BOB);
-	platon::mpc::Integer y2(p2.y(), BOB);
+	emp::Integer x1(p1.x(), emp::ALICE);
+	emp::Integer y1(p1.y(), emp::ALICE);
+	emp::Integer x2(p2.x(), emp::BOB);
+	emp::Integer y2(p2.y(), emp::BOB);
 
-	platon::mpc::Integer z = (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
+	emp::Integer z = (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
 
 	int ret = sqrt(z.reveal_int());
 	std::cout << __FUNCTION__ << " result: " << ret << std::endl;
@@ -79,8 +79,8 @@ Basic test. + - * / % & | ^.
 int TestAdd(int a, int b) {
 	std::cout << __FUNCTION__ << " Alice: " << a << " Bob: " << b << std::endl;
 
-	platon::mpc::Integer x(a, ALICE);
-	platon::mpc::Integer y(b, BOB);
+	emp::Integer x(a, emp::ALICE);
+	emp::Integer y(b, emp::BOB);
 
 	int ret = (x + y).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice+Bob): " << ret << std::endl;
@@ -91,8 +91,8 @@ int TestAdd(int a, int b) {
 int TestSub(int a, int b) {
 	std::cout << __FUNCTION__ << " Alice: " << a << " Bob: " << b << std::endl;
 
-	platon::mpc::Integer x(a, ALICE);
-	platon::mpc::Integer y(b, BOB);
+	emp::Integer x(a, emp::ALICE);
+	emp::Integer y(b, emp::BOB);
 
 	int ret = (x - y).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice-Bob): " << ret << std::endl;
@@ -103,8 +103,8 @@ int TestSub(int a, int b) {
 int TestMul(int a, int b) {
 	std::cout << __FUNCTION__ << " Alice: " << a << " Bob: " << b << std::endl;
 
-	platon::mpc::Integer x(a, ALICE);
-	platon::mpc::Integer y(b, BOB);
+	emp::Integer x(a, emp::ALICE);
+	emp::Integer y(b, emp::BOB);
 
 	int ret = (x * y).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice*Bob): " << ret << std::endl;
@@ -115,8 +115,8 @@ int TestMul(int a, int b) {
 int TestDiv(int a, int b) {
 	std::cout << __FUNCTION__ << " Alice: " << a << " Bob: " << b << std::endl;
 
-	platon::mpc::Integer x(a, ALICE);
-	platon::mpc::Integer y(b, BOB);
+	emp::Integer x(a, emp::ALICE);
+	emp::Integer y(b, emp::BOB);
 
 	int ret = (x / y).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice/Bob): " << ret << std::endl;
@@ -127,8 +127,8 @@ int TestDiv(int a, int b) {
 int TestMod(int a, int b) {
 	std::cout << __FUNCTION__ << " Alice: " << a << " Bob: " << b << std::endl;
 
-	platon::mpc::Integer x(a, ALICE);
-	platon::mpc::Integer y(b, BOB);
+	emp::Integer x(a, emp::ALICE);
+	emp::Integer y(b, emp::BOB);
 
 	int ret = (x % y).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice%%Bob): " << ret << std::endl;
@@ -139,8 +139,8 @@ int TestMod(int a, int b) {
 int TestAnd(int a, int b) {
 	std::cout << __FUNCTION__ << " Alice: " << a << " Bob: " << b << std::endl;
 
-	platon::mpc::Integer x(a, ALICE);
-	platon::mpc::Integer y(b, BOB);
+	emp::Integer x(a, emp::ALICE);
+	emp::Integer y(b, emp::BOB);
 
 	int ret = (x & y).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice&Bob): " << ret << std::endl;
@@ -151,8 +151,8 @@ int TestAnd(int a, int b) {
 int TestOr(int a, int b) {
 	std::cout << __FUNCTION__ << " Alice: " << a << " Bob: " << b << std::endl;
 
-	platon::mpc::Integer x(a, ALICE);
-	platon::mpc::Integer y(b, BOB);
+	emp::Integer x(a, emp::ALICE);
+	emp::Integer y(b, emp::BOB);
 
 	int ret = (x | y).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice|Bob): " << ret << std::endl;
@@ -163,8 +163,8 @@ int TestOr(int a, int b) {
 int TestXor(int a, int b) {
 	std::cout << __FUNCTION__ << " Alice: " << a << " Bob: " << b << std::endl;
 
-	platon::mpc::Integer x(a, ALICE);
-	platon::mpc::Integer y(b, BOB);
+	emp::Integer x(a, emp::ALICE);
+	emp::Integer y(b, emp::BOB);
 
 	int ret = (x ^ y).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice^Bob): " << ret << std::endl;
@@ -196,8 +196,8 @@ Protobuffer message test.
 Foo TestFooAdd01(const Foo& a, const Foo& b) {
 	std::cout << __FUNCTION__ << " Alice: " << a.i32() << " Bob: " << b.i32() << std::endl;
 
-	platon::mpc::Integer x(a.i32(), ALICE);
-	platon::mpc::Integer y(b.i32(), BOB);
+	emp::Integer x(a.i32(), emp::ALICE);
+	emp::Integer y(b.i32(), emp::BOB);
 
 	int ret = (x + y).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice+Bob): " << ret << std::endl;
@@ -213,8 +213,8 @@ Foo TestFooAdd01(const Foo& a, const Foo& b) {
 Foo TestFooAdd02(const Foo& a, int b) {
 	std::cout << __FUNCTION__ << " Alice: " << a.i32() << " Bob: " << b << std::endl;
 
-	platon::mpc::Integer x(a.i32(), ALICE);
-	platon::mpc::Integer y(b, BOB);
+	emp::Integer x(a.i32(), emp::ALICE);
+	emp::Integer y(b, emp::BOB);
 
 	int ret = (x + y).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice+Bob): " << ret << std::endl;
@@ -230,8 +230,8 @@ Foo TestFooAdd02(const Foo& a, int b) {
 Foo TestFooAdd03(int a, int b) {
 	std::cout << __FUNCTION__ << " Alice: " << a << " Bob: " << b << std::endl;
 
-	platon::mpc::Integer x(a, ALICE);
-	platon::mpc::Integer y(b, BOB);
+	emp::Integer x(a, emp::ALICE);
+	emp::Integer y(b, emp::BOB);
 
 	int ret = (x + y).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice+Bob): " << ret << std::endl;
@@ -248,14 +248,14 @@ Bar TestBarAdd01(const Bar& a, const Bar& b) {
 	std::cout << __FUNCTION__ << " Bar Alice: " << a.i32() << " Bob: " << b.i32() << std::endl;
 	std::cout << __FUNCTION__ << " Bar.Foo Alice: " << a.foo().i32() << " Bob: " << b.foo().i32() << std::endl;
 
-	platon::mpc::Integer x(a.i32(), ALICE);
-	platon::mpc::Integer y(b.i32(), BOB);
+	emp::Integer x(a.i32(), emp::ALICE);
+	emp::Integer y(b.i32(), emp::BOB);
 
 	int ret = (x + y).reveal_int();
 	std::cout << __FUNCTION__ << " Bar result(=Alice+Bob): " << ret << std::endl;
 
-	platon::mpc::Integer x1(a.foo().i32(), ALICE);
-	platon::mpc::Integer y1(b.foo().i32(), BOB);
+	emp::Integer x1(a.foo().i32(), emp::ALICE);
+	emp::Integer y1(b.foo().i32(), emp::BOB);
 
 	int ret1 = (x1 + y1).reveal_int();
 	std::cout << __FUNCTION__ << " Bar.Foo result(=Alice+Bob): " << ret << std::endl;
@@ -275,8 +275,8 @@ Bar TestBarAdd01(const Bar& a, const Bar& b) {
 Bar TestBarAdd02(const Foo& a, const Foo& b) {
 	std::cout << __FUNCTION__ << " Alice: " << a.i32() << " Bob: " << b.i32() << std::endl;
 
-	platon::mpc::Integer x(a.i32(), ALICE);
-	platon::mpc::Integer y(b.i32(), BOB);
+	emp::Integer x(a.i32(), emp::ALICE);
+	emp::Integer y(b.i32(), emp::BOB);
 
 	int ret = (x + y).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice+Bob): " << ret << std::endl;
@@ -301,8 +301,8 @@ Points ReturnPoints(int a, int b) {
 	point->set_x(a);
 	point->set_y(b);
 
-	platon::mpc::Integer x(a, ALICE);
-	platon::mpc::Integer y(b, BOB);
+	emp::Integer x(a, emp::ALICE);
+	emp::Integer y(b, emp::BOB);
 
 	for (int i = 1; i < 10; i++) {
 		Point* point = points.add_points();
@@ -319,9 +319,9 @@ Performance test
 int PerfTest01(int a, int b) {
 	std::cout << __FUNCTION__ << " Alice: " << a << " Bob: " << b << std::endl;
 
-	platon::mpc::Integer x(a, ALICE);
-	platon::mpc::Integer y(b, BOB);
-	platon::mpc::Integer z;
+	emp::Integer x(a, emp::ALICE);
+	emp::Integer y(b, emp::BOB);
+	emp::Integer z;
 
 	for (int i = 0; i < 10000; i++) {
 		z = x + y;
