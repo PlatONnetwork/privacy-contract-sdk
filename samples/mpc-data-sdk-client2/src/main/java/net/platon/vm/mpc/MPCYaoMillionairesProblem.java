@@ -21,16 +21,16 @@ import java.util.HashMap;
  * DIGEST:
  * <p>
  * IR NAME: MPCYaoMillionairesProblem
- * IR HASH: 410bcb121d3904ad63dd6b94c6424f27
+ * IR HASH: 0c64c89a6915cb073515675607e3fcd5
  * <p>
- * IR FUNC HASH(MD5)                 IR FUNC NAME    
- * 0588f14217b11e0f77e50d03a88ba866  YaoMillionairesProblem
+ * IR FUNC HASH(MD5)                 IR FUNC NAME            IR FUNC PROT
+ * 0588f14217b11e0f77e50d03a88ba866  YaoMillionairesProblem  YaoMillionairesProblem(int,int)
  */
  
-interface mpc_ii_410bcb121d3904ad63dd6b94c6424f27 extends IIInterface {
+interface mpc_ii_0c64c89a6915cb073515675607e3fcd5 extends IIInterface {
 }
 
-public class MPCYaoMillionairesProblem implements mpc_ii_410bcb121d3904ad63dd6b94c6424f27 {
+public class MPCYaoMillionairesProblem implements mpc_ii_0c64c89a6915cb073515675607e3fcd5 {
     private HashMap<String, MpcCallbackInterface> funcInterfaces = new HashMap<String, MpcCallbackInterface>() {{
         put("mpc_f_0588f14217b11e0f77e50d03a88ba866_01", new MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_01());
         put("mpc_f_0588f14217b11e0f77e50d03a88ba866_02", new MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_02());
@@ -47,7 +47,7 @@ public class MPCYaoMillionairesProblem implements mpc_ii_410bcb121d3904ad63dd6b9
         return funcInterfaces;
     }
 
-    abstract class MpcCallbackBase_410bcb121d3904ad63dd6b94c6424f27 implements MpcCallbackInterface {
+    abstract class MpcCallbackBase_0c64c89a6915cb073515675607e3fcd5 implements MpcCallbackInterface {
         public abstract byte[] inputImpl(final InputRequestPara para);
         
         public byte[] input(final InputRequestPara para) {
@@ -64,16 +64,16 @@ public class MPCYaoMillionairesProblem implements mpc_ii_410bcb121d3904ad63dd6b9
         }
     }
 
-    abstract class mpc_i_410bcb121d3904ad63dd6b94c6424f27 extends MpcCallbackBase_410bcb121d3904ad63dd6b94c6424f27 {
+    abstract class mpc_i_0c64c89a6915cb073515675607e3fcd5 extends MpcCallbackBase_0c64c89a6915cb073515675607e3fcd5 {
     }
     
-    abstract class mpc_f_0588f14217b11e0f77e50d03a88ba866_01 extends mpc_i_410bcb121d3904ad63dd6b94c6424f27 {
+    abstract class mpc_f_0588f14217b11e0f77e50d03a88ba866_01 extends mpc_i_0c64c89a6915cb073515675607e3fcd5 {
         public byte[] input_x_default(){
             return Data.Int32(0);
         }
     }
 
-    abstract class mpc_f_0588f14217b11e0f77e50d03a88ba866_02 extends mpc_i_410bcb121d3904ad63dd6b94c6424f27 {
+    abstract class mpc_f_0588f14217b11e0f77e50d03a88ba866_02 extends mpc_i_0c64c89a6915cb073515675607e3fcd5 {
         public byte[] input_x_default(){
             return Data.Int32(0);
         }

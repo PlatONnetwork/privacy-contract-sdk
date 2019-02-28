@@ -1,0 +1,11 @@
+
+syntax = "proto3";
+option optimize_for = LITE_RUNTIME;
+
+package simpleandproto;
+option java_package = "com.abc.simpleandproto";
+
+message Foo {
+    int32       i32 = 1;
+    float       f   = 2;
+}

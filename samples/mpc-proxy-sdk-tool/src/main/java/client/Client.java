@@ -188,7 +188,7 @@ class TaskThread implements Runnable {
                 || method.equals(Method.int_TestMod_int_int)
                 || method.equals(Method.int_TestAnd_int_int)
                 || method.equals(Method.int_TestOr_int_int)
-                || method.equals(Method.int_TestEor_int_int)
+                || method.equals(Method.int_TestXor_int_int)
                 || method.equals(Method.int_PerfTest01_int_int)) {
             int ret = client.getInt32(cipher);
             logger.info("result int: {}", ret);
@@ -248,7 +248,7 @@ class TaskThread implements Runnable {
         put("TestMod", ProxySamples.Method.int_TestMod_int_int);
         put("TestAnd", ProxySamples.Method.int_TestAnd_int_int);
         put("TestOr", ProxySamples.Method.int_TestOr_int_int);
-        put("TestEor", ProxySamples.Method.int_TestEor_int_int);
+        put("TestEor", ProxySamples.Method.int_TestXor_int_int);
         put("TestLong", ProxySamples.Method.long_TestLong_long_long);
         put("TestBool", ProxySamples.Method.boolean_TestBool_boolean_boolean);
         put("TestFloat", ProxySamples.Method.float_TestFloat_float_float);

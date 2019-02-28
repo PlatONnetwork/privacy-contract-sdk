@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "platon_integer.h"
+#include "integer.h"
 
 #include "code/Foo.pb.h"
 using namespace multiproto;
@@ -9,8 +9,8 @@ using namespace multiproto;
 Foo TestFooAdd01(const Foo& a, const Foo& b) {
 	std::cout << __FUNCTION__ << " Alice: " << a.i32() << " Bob: " << b.i32() << std::endl;
 
-	platon::mpc::Integer x(a.i32(), ALICE);
-	platon::mpc::Integer y(b.i32(), BOB);
+	emp::Integer x(a.i32(), emp::ALICE);
+	emp::Integer y(b.i32(), emp::BOB);
 
 	int ret = (x + y).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice+Bob): " << ret << std::endl;
@@ -26,8 +26,8 @@ Foo TestFooAdd01(const Foo& a, const Foo& b) {
 Foo TestFooAdd02(const Foo& a, int b) {
 	std::cout << __FUNCTION__ << " Alice: " << a.i32() << " Bob: " << b << std::endl;
 
-	platon::mpc::Integer x(a.i32(), ALICE);
-	platon::mpc::Integer y(b, BOB);
+	emp::Integer x(a.i32(), emp::ALICE);
+	emp::Integer y(b, emp::BOB);
 
 	int ret = (x + y).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice+Bob): " << ret << std::endl;
@@ -43,8 +43,8 @@ Foo TestFooAdd02(const Foo& a, int b) {
 Foo TestFooAdd03(int a, int b) {
 	std::cout << __FUNCTION__ << " Alice: " << a << " Bob: " << b << std::endl;
 
-	platon::mpc::Integer x(a, ALICE);
-	platon::mpc::Integer y(b, BOB);
+	emp::Integer x(a, emp::ALICE);
+	emp::Integer y(b, emp::BOB);
 
 	int ret = (x + y).reveal_int();
 	std::cout << __FUNCTION__ << " result(=Alice+Bob): " << ret << std::endl;

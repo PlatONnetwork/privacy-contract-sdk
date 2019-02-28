@@ -1,0 +1,10 @@
+
+syntax = "proto3";
+
+package simpleandproto;
+option java_package = "com.abc.simpleandproto";
+
+message Foo {
+    int32       i32 = 1;
+    float       f   = 2;
+}

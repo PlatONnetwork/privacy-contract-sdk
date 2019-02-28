@@ -3,7 +3,7 @@
 #include <chrono>
 using namespace std::chrono;
 
-#include "platon_integer.h"
+#include "integer.h"
 
 #define _TimerBeg() auto beg = std::chrono::system_clock::now()
 #define _TimerEnd(n) auto end = std::chrono::system_clock::now();\
@@ -22,9 +22,9 @@ int TestPerf##Op(int a, int b) {\
 int times = 1e5;\
 std::cout << __FUNCTION__ << " input Alice: " << a << " Bob: " << b << std::endl;\
 \
-platon::mpc::Integer x(a, ALICE);\
-platon::mpc::Integer y(b, BOB);\
-platon::mpc::Integer z;\
+emp::Integer x(a, emp::ALICE);\
+emp::Integer y(b, emp::BOB);\
+emp::Integer z;\
 \
 _TimerBeg();\
 for (int i = 0; i < times; i++) {\

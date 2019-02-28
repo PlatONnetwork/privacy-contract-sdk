@@ -1,0 +1,12 @@
+
+THIS FILE IS AUTO-GENERATED! DO NOT EDIT!
+
+DIGEST:
+/**
+ * IR NAME: MPCSimple
+ * IR HASH: d6c57c718727427a161e89526e2b2626
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME  IR FUNC PROT
+ * d26161114e7457c9be1414e51637c641  TestAdd       TestAdd(int,int)
+ */
+

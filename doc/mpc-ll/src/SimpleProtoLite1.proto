@@ -1,0 +1,11 @@
+
+syntax = "proto3";
+option optimize_for = LITE_RUNTIME;
+
+package simpleproto1;
+option java_package = "com.abc.simpleproto1";
+
+message Point {
+    int32       x	= 1;
+    int32       y	= 2;
+}
