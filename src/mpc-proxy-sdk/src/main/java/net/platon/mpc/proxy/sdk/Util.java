@@ -1,9 +1,13 @@
 package net.platon.mpc.proxy.sdk;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Util {
+    private static final Logger logger = LoggerFactory.getLogger(Util.class.getName());
 
     public static String bytesToHex(byte[] in) {
         final StringBuilder builder = new StringBuilder();
@@ -44,7 +48,8 @@ public class Util {
         try {
             date = inputFormat.parse(inVal);
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         assert date != null;
         return date.getTime();

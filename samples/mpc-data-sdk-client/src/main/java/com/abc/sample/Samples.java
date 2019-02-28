@@ -80,6 +80,13 @@ public final class Samples {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 8: {
 
               i32_ = input.readInt32();
@@ -94,13 +101,6 @@ public final class Samples {
               java.lang.String s = input.readStringRequireUtf8();
 
               s_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -120,7 +120,6 @@ public final class Samples {
       return com.abc.sample.Samples.internal_static_sample_Foo_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.abc.sample.Samples.internal_static_sample_Foo_fieldAccessorTable
@@ -181,7 +180,6 @@ public final class Samples {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -191,7 +189,6 @@ public final class Samples {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (i32_ != 0) {
@@ -206,7 +203,6 @@ public final class Samples {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -340,7 +336,6 @@ public final class Samples {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -348,7 +343,6 @@ public final class Samples {
     public static Builder newBuilder(com.abc.sample.Samples.Foo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -372,7 +366,6 @@ public final class Samples {
         return com.abc.sample.Samples.internal_static_sample_Foo_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.abc.sample.Samples.internal_static_sample_Foo_fieldAccessorTable
@@ -395,7 +388,6 @@ public final class Samples {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         i32_ = 0;
@@ -407,18 +399,15 @@ public final class Samples {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.abc.sample.Samples.internal_static_sample_Foo_descriptor;
       }
 
-      @java.lang.Override
       public com.abc.sample.Samples.Foo getDefaultInstanceForType() {
         return com.abc.sample.Samples.Foo.getDefaultInstance();
       }
 
-      @java.lang.Override
       public com.abc.sample.Samples.Foo build() {
         com.abc.sample.Samples.Foo result = buildPartial();
         if (!result.isInitialized()) {
@@ -427,7 +416,6 @@ public final class Samples {
         return result;
       }
 
-      @java.lang.Override
       public com.abc.sample.Samples.Foo buildPartial() {
         com.abc.sample.Samples.Foo result = new com.abc.sample.Samples.Foo(this);
         result.i32_ = i32_;
@@ -437,39 +425,32 @@ public final class Samples {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.abc.sample.Samples.Foo) {
           return mergeFrom((com.abc.sample.Samples.Foo)other);
@@ -496,12 +477,10 @@ public final class Samples {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -640,13 +619,11 @@ public final class Samples {
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -668,7 +645,6 @@ public final class Samples {
 
     private static final com.google.protobuf.Parser<Foo>
         PARSER = new com.google.protobuf.AbstractParser<Foo>() {
-      @java.lang.Override
       public Foo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -686,7 +662,6 @@ public final class Samples {
       return PARSER;
     }
 
-    @java.lang.Override
     public com.abc.sample.Samples.Foo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -761,6 +736,13 @@ public final class Samples {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               com.abc.sample.Samples.Foo.Builder subBuilder = null;
               if (foo_ != null) {
@@ -784,13 +766,6 @@ public final class Samples {
               f_ = input.readFloat();
               break;
             }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -808,7 +783,6 @@ public final class Samples {
       return com.abc.sample.Samples.internal_static_sample_Bar_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.abc.sample.Samples.internal_static_sample_Bar_fieldAccessorTable
@@ -856,7 +830,6 @@ public final class Samples {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -866,7 +839,6 @@ public final class Samples {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (foo_ != null) {
@@ -881,7 +853,6 @@ public final class Samples {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1021,7 +992,6 @@ public final class Samples {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1029,7 +999,6 @@ public final class Samples {
     public static Builder newBuilder(com.abc.sample.Samples.Bar prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1053,7 +1022,6 @@ public final class Samples {
         return com.abc.sample.Samples.internal_static_sample_Bar_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.abc.sample.Samples.internal_static_sample_Bar_fieldAccessorTable
@@ -1076,7 +1044,6 @@ public final class Samples {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (fooBuilder_ == null) {
@@ -1092,18 +1059,15 @@ public final class Samples {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.abc.sample.Samples.internal_static_sample_Bar_descriptor;
       }
 
-      @java.lang.Override
       public com.abc.sample.Samples.Bar getDefaultInstanceForType() {
         return com.abc.sample.Samples.Bar.getDefaultInstance();
       }
 
-      @java.lang.Override
       public com.abc.sample.Samples.Bar build() {
         com.abc.sample.Samples.Bar result = buildPartial();
         if (!result.isInitialized()) {
@@ -1112,7 +1076,6 @@ public final class Samples {
         return result;
       }
 
-      @java.lang.Override
       public com.abc.sample.Samples.Bar buildPartial() {
         com.abc.sample.Samples.Bar result = new com.abc.sample.Samples.Bar(this);
         if (fooBuilder_ == null) {
@@ -1126,39 +1089,32 @@ public final class Samples {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.abc.sample.Samples.Bar) {
           return mergeFrom((com.abc.sample.Samples.Bar)other);
@@ -1184,12 +1140,10 @@ public final class Samples {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1376,13 +1330,11 @@ public final class Samples {
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1404,7 +1356,6 @@ public final class Samples {
 
     private static final com.google.protobuf.Parser<Bar>
         PARSER = new com.google.protobuf.AbstractParser<Bar>() {
-      @java.lang.Override
       public Bar parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1422,7 +1373,6 @@ public final class Samples {
       return PARSER;
     }
 
-    @java.lang.Override
     public com.abc.sample.Samples.Bar getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1484,6 +1434,13 @@ public final class Samples {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 8: {
 
               x_ = input.readInt32();
@@ -1492,13 +1449,6 @@ public final class Samples {
             case 16: {
 
               y_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -1518,7 +1468,6 @@ public final class Samples {
       return com.abc.sample.Samples.internal_static_sample_Point_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.abc.sample.Samples.internal_static_sample_Point_fieldAccessorTable
@@ -1545,7 +1494,6 @@ public final class Samples {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1555,7 +1503,6 @@ public final class Samples {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (x_ != 0) {
@@ -1567,7 +1514,6 @@ public final class Samples {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1691,7 +1637,6 @@ public final class Samples {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1699,7 +1644,6 @@ public final class Samples {
     public static Builder newBuilder(com.abc.sample.Samples.Point prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1723,7 +1667,6 @@ public final class Samples {
         return com.abc.sample.Samples.internal_static_sample_Point_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.abc.sample.Samples.internal_static_sample_Point_fieldAccessorTable
@@ -1746,7 +1689,6 @@ public final class Samples {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         x_ = 0;
@@ -1756,18 +1698,15 @@ public final class Samples {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.abc.sample.Samples.internal_static_sample_Point_descriptor;
       }
 
-      @java.lang.Override
       public com.abc.sample.Samples.Point getDefaultInstanceForType() {
         return com.abc.sample.Samples.Point.getDefaultInstance();
       }
 
-      @java.lang.Override
       public com.abc.sample.Samples.Point build() {
         com.abc.sample.Samples.Point result = buildPartial();
         if (!result.isInitialized()) {
@@ -1776,7 +1715,6 @@ public final class Samples {
         return result;
       }
 
-      @java.lang.Override
       public com.abc.sample.Samples.Point buildPartial() {
         com.abc.sample.Samples.Point result = new com.abc.sample.Samples.Point(this);
         result.x_ = x_;
@@ -1785,39 +1723,32 @@ public final class Samples {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.abc.sample.Samples.Point) {
           return mergeFrom((com.abc.sample.Samples.Point)other);
@@ -1840,12 +1771,10 @@ public final class Samples {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1915,13 +1844,11 @@ public final class Samples {
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1943,7 +1870,6 @@ public final class Samples {
 
     private static final com.google.protobuf.Parser<Point>
         PARSER = new com.google.protobuf.AbstractParser<Point>() {
-      @java.lang.Override
       public Point parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1961,7 +1887,6 @@ public final class Samples {
       return PARSER;
     }
 
-    @java.lang.Override
     public com.abc.sample.Samples.Point getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2036,6 +1961,13 @@ public final class Samples {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 points_ = new java.util.ArrayList<com.abc.sample.Samples.Point>();
@@ -2043,13 +1975,6 @@ public final class Samples {
               }
               points_.add(
                   input.readMessage(com.abc.sample.Samples.Point.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -2072,7 +1997,6 @@ public final class Samples {
       return com.abc.sample.Samples.internal_static_sample_Points_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.abc.sample.Samples.internal_static_sample_Points_fieldAccessorTable
@@ -2116,7 +2040,6 @@ public final class Samples {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2126,7 +2049,6 @@ public final class Samples {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < points_.size(); i++) {
@@ -2135,7 +2057,6 @@ public final class Samples {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2253,7 +2174,6 @@ public final class Samples {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2261,7 +2181,6 @@ public final class Samples {
     public static Builder newBuilder(com.abc.sample.Samples.Points prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2285,7 +2204,6 @@ public final class Samples {
         return com.abc.sample.Samples.internal_static_sample_Points_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.abc.sample.Samples.internal_static_sample_Points_fieldAccessorTable
@@ -2309,7 +2227,6 @@ public final class Samples {
           getPointsFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (pointsBuilder_ == null) {
@@ -2321,18 +2238,15 @@ public final class Samples {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.abc.sample.Samples.internal_static_sample_Points_descriptor;
       }
 
-      @java.lang.Override
       public com.abc.sample.Samples.Points getDefaultInstanceForType() {
         return com.abc.sample.Samples.Points.getDefaultInstance();
       }
 
-      @java.lang.Override
       public com.abc.sample.Samples.Points build() {
         com.abc.sample.Samples.Points result = buildPartial();
         if (!result.isInitialized()) {
@@ -2341,7 +2255,6 @@ public final class Samples {
         return result;
       }
 
-      @java.lang.Override
       public com.abc.sample.Samples.Points buildPartial() {
         com.abc.sample.Samples.Points result = new com.abc.sample.Samples.Points(this);
         int from_bitField0_ = bitField0_;
@@ -2358,39 +2271,32 @@ public final class Samples {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.abc.sample.Samples.Points) {
           return mergeFrom((com.abc.sample.Samples.Points)other);
@@ -2433,12 +2339,10 @@ public final class Samples {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2697,13 +2601,11 @@ public final class Samples {
         }
         return pointsBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2725,7 +2627,6 @@ public final class Samples {
 
     private static final com.google.protobuf.Parser<Points>
         PARSER = new com.google.protobuf.AbstractParser<Points>() {
-      @java.lang.Override
       public Points parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2743,7 +2644,6 @@ public final class Samples {
       return PARSER;
     }
 
-    @java.lang.Override
     public com.abc.sample.Samples.Points getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }

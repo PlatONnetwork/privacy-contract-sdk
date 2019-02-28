@@ -39,7 +39,7 @@ public class ParameterParser {
         sb.append("\n                       =getResultByTaskId(taskId)");
         sb.append("\n                       =getResultByTransactionHash(transactionHash)");
         sb.append("\n                       =getPlainText(cipher)");
-        sb.append("\n-i           --method: MPC method");
+        sb.append("\n-m           --method: MPC method");
 
         System.out.println(sb.toString());
     }
@@ -55,13 +55,14 @@ public class ParameterParser {
         options.addOption("a", "contractAddress", true, "MPC contract address");
         options.addOption("n", "threadNum", true, "Thread number, default 1, for performance test");
         options.addOption("i", "api", true, "MPC Client API");
-        options.addOption("f", "method", true, "MPC method");
+        options.addOption("m", "method", true, "MPC method");
 
         CommandLine commandLine = null;
         try {
             commandLine = parser.parse(options, args);
         } catch (ParseException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
             System.exit(1);
         }
 

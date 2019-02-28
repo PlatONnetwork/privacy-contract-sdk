@@ -2,6 +2,8 @@ package net.platon.mpc.proxy.sdk;
 
 import org.ethereum.crypto.ECIESCoder;
 import org.ethereum.crypto.ECKey;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.spongycastle.math.ec.ECPoint;
 import org.spongycastle.util.encoders.Hex;
 
@@ -10,13 +12,16 @@ import java.math.BigInteger;
 import static net.platon.mpc.proxy.sdk.Util.hexToByteArray;
 
 public class ethECIES {
+    private static final Logger logger = LoggerFactory.getLogger(Util.class.getName());
+
     public static byte[] Decrypt(String priHexString, byte[] cipher_data) {
         BigInteger privKey = new BigInteger(priHexString, 16);
         byte[] plain_data = new byte[0];
         try {
             plain_data = ECIESCoder.decrypt(privKey, cipher_data);
         } catch (Throwable e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return plain_data;
     }
@@ -29,7 +34,8 @@ public class ethECIES {
         try {
             cipher_data = ECIESCoder.encrypt(pubKeyPoint, plain_data);
         } catch (Throwable e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
 
         return cipher_data;
@@ -43,7 +49,8 @@ public class ethECIES {
         try {
             cipher_data = ECIESCoder.encrypt(pubKeyPoint, plain_data);
         } catch (Throwable e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
 
         return cipher_data;

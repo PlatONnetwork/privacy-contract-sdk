@@ -53,10 +53,9 @@ public class TransactionCallbackI extends _TransactionCallbackDisp {
                     ownAddress, DefaultBlockParameterName.LATEST).sendAsync().get();
 
             nonce = ethGetTransactionCount.getTransactionCount();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
+        } catch (InterruptedException | ExecutionException e) {
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
 
         return nonce;
@@ -76,11 +75,10 @@ public class TransactionCallbackI extends _TransactionCallbackDisp {
             String transactionHash = ethSendTransaction.getTransactionHash();
 
             //获得到transactionHash后就可以到以太坊的网站上查询这笔交易的状态了
-            System.out.println(transactionHash);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
+            //System.out.println(transactionHash);
+        } catch (InterruptedException | ExecutionException e) {
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
     }
 
@@ -98,16 +96,11 @@ public class TransactionCallbackI extends _TransactionCallbackDisp {
 
             fileName = WalletUtils.generateNewWalletFile("password2", new File(filePath), false);
             credentialsGen = WalletUtils.loadCredentials("password2", filePath + "/" + fileName);
-        } catch (CipherException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InvalidAlgorithmParameterException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (NoSuchProviderException e) {
-            e.printStackTrace();
+        } catch (CipherException | IOException
+                | InvalidAlgorithmParameterException
+                | NoSuchAlgorithmException | NoSuchProviderException e) {
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
     }
 
@@ -143,7 +136,8 @@ public class TransactionCallbackI extends _TransactionCallbackDisp {
             logger.info("transaction sign:{}", hexValue);
             return hexValue;
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return "0x215611b455S611b455S611b455S611b455S611b455S611b455SA254312a11";
     }
@@ -165,11 +159,11 @@ public class TransactionCallbackI extends _TransactionCallbackDisp {
 
             GAS_PRICE = DefaultGasProvider.GAS_PRICE;
             GAS_LIMIT = DefaultGasProvider.GAS_LIMIT;
-            GAS_PRICE = BigInteger.valueOf(0x8250de00L);
-            GAS_LIMIT = BigInteger.valueOf(6000000L);
+            //GAS_PRICE = BigInteger.valueOf(0x8250de00L);
+            //GAS_LIMIT = BigInteger.valueOf(6000000L);
             logger.info("task_id:{}", transparams.task_id);
             logger.info("state:{}", transparams.state);
-            logger.info("data:{}", bytesToHex(transparams.data));
+            logger.debug("data:{}", bytesToHex(transparams.data));
             logger.info("GAS_PRICE:{}", GAS_PRICE);
             logger.info("GAS_LIMIT:{}", GAS_LIMIT);
             logger.info("nonce:{}", nonce);
@@ -184,7 +178,7 @@ public class TransactionCallbackI extends _TransactionCallbackDisp {
             RlpType rt_data = RlpString.create(bytesToHex(transparams.data));
             RlpList r = new RlpList(rt_type, rt_func, rt_taskid, rt_state, rt_data);
             String data = "0x" + bytesToHex(RlpEncoder.encode(r));
-            logger.info("data:{}", data);
+            logger.debug("data:{}", data);
 
             if (credentials == null) {
                 credentials = WalletUtils.loadCredentials(walletPassword, walletPath);
@@ -233,7 +227,8 @@ public class TransactionCallbackI extends _TransactionCallbackDisp {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return "";
     }

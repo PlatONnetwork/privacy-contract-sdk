@@ -1,0 +1,265 @@
+libprotoc 3.5.1
+digest:
+ * IR NAME: MPCYaoMillionairesProblem
+ * IR HASH: 70ed37da195ee6ee98406ed1c6ade07b
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME            IR FUNC PROT
+ * 0588f14217b11e0f77e50d03a88ba866  YaoMillionairesProblem  YaoMillionairesProblem(int,int)
+
+digest:
+ * IR NAME: MPCSimple
+ * IR HASH: 11fa0c20711b67a5dbae28d51f795a81
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME  IR FUNC PROT
+ * d26161114e7457c9be1414e51637c641  TestAdd       TestAdd(int,int)
+
+code/com/abc/simpleproto1/SimpleProto1.java
+digest:
+ * IR NAME: MPCSimpleProto1
+ * IR HASH: 8142d420983be7e379e4aa6b684bd622
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME       IR FUNC PROT
+ * 5ab2b5492eebb9fffe14c94278372bff  EuclideanDistance  EuclideanDistance(Point,Point)
+
+code/com/abc/simpleproto2/SimpleProto2.java
+digest:
+ * IR NAME: MPCSimpleProto2
+ * IR HASH: d3ab0b9667a627bd0d1153bca6dd4e47
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME  IR FUNC PROT
+ * 913b11f78f06e4a1d58688a4190afade  TestBarAdd01  TestBarAdd01(Bar,Bar)
+
+code/com/abc/multiproto/FooOuterClass.java
+code/com/abc/multiproto/BarOuterClass.java
+digest:
+ * IR NAME: MPCFoo
+ * IR HASH: 3303c6ccca38e0277c3484088a1ddf59
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME  IR FUNC PROT
+ * 5990cb3c0972e165c2a3eb08cef90739  TestFooAdd01  TestFooAdd01(Foo,Foo)
+ * 9f003479e99ad875b197c2645eafdf00  TestFooAdd02  TestFooAdd02(Foo,int)
+ * 60e7e4c1bc1dbbeb5c9c976911cb93aa  TestFooAdd03  TestFooAdd03(int,int)
+ * 913b11f78f06e4a1d58688a4190afade  TestBarAdd01  TestBarAdd01(Foo,Foo)
+ * 45a8fbe6c1573f22b547cee7ee95aa93  TestBarAdd02  TestBarAdd02(Foo,int)
+ * dd3d8b98f5a66406145926f17d0894b2  TestBarAdd03  TestBarAdd03(int,int)
+
+code/com/abc/sample/Samples.java
+digest:
+ * IR NAME: MPCSamples
+ * IR HASH: b12f0b1f1ff0f75caf4971ed6ba064b6
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME            IR FUNC PROT
+ * 56b5f54f4f33826a0d4a6e9c4698c0e9  CompareAge              CompareAge(int,int)
+ * 0588f14217b11e0f77e50d03a88ba866  YaoMillionairesProblem  YaoMillionairesProblem(int,int)
+ * 5ab2b5492eebb9fffe14c94278372bff  EuclideanDistance       EuclideanDistance(Point,Point)
+ * d26161114e7457c9be1414e51637c641  TestAdd                 TestAdd(int,int)
+ * 1a83aebca27f862affd17085b84fca25  TestSub                 TestSub(int,int)
+ * 0b953bdd9a5c09fd31e6e6d42742b02a  TestMul                 TestMul(int,int)
+ * 741515664519c7f13245e307d8c66232  TestDiv                 TestDiv(int,int)
+ * 32f3009a62ab833cbf753a72c5817b0a  TestMod                 TestMod(int,int)
+ * e25f6b2f0fa3dfc63ea97887b8f46f63  TestAnd                 TestAnd(int,int)
+ * 02b7ae4250b2dd9088a4a06042807efc  TestOr                  TestOr(int,int)
+ * 5d941409f2f99b3c93cb0bea24f626ee  TestXor                 TestXor(int,int)
+ * bd79f910f487a460196bdac195b23979  TestLong                TestLong(long,long)
+ * fc2c6c8dc4c9b58b382340c8f03e18a3  TestBool                TestBool(boolean,boolean)
+ * d3ed105f859d5bd6a4413f86b33d053a  TestFloat               TestFloat(float,float)
+ * 30ba0fc8d77e422a686dd95f8e6cb5c2  TestDouble              TestDouble(double,double)
+ * 5990cb3c0972e165c2a3eb08cef90739  TestFooAdd01            TestFooAdd01(Foo,Foo)
+ * 9f003479e99ad875b197c2645eafdf00  TestFooAdd02            TestFooAdd02(Foo,int)
+ * 60e7e4c1bc1dbbeb5c9c976911cb93aa  TestFooAdd03            TestFooAdd03(int,int)
+ * 913b11f78f06e4a1d58688a4190afade  TestBarAdd01            TestBarAdd01(Bar,Bar)
+ * 45a8fbe6c1573f22b547cee7ee95aa93  TestBarAdd02            TestBarAdd02(Foo,Foo)
+ * 6e40f057b31a64027c214af96f5000ab  ReturnPoints            ReturnPoints(int,int)
+ * 3fcf6b8a4c70a01c24b2b7ca99cc86ff  PerfTest01              PerfTest01(int,int)
+
+code/com/abc/simpleandproto/SimpleAndProto.java
+digest:
+ * IR NAME: MPCSimpleAndProto
+ * IR HASH: e748f3df8777747180183925fbdd64a8
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME  IR FUNC PROT
+ * d26161114e7457c9be1414e51637c641  TestAdd       TestAdd(int,int)
+ * 91e30d5109c47916f14cdd5ba7aa1e13  TestFooAdd    TestFooAdd(Foo,Foo)
+
+digest:
+ * IR NAME: MPCTestBasicType
+ * IR HASH: 1b8ad12cc096a7daafb261e7598fb0e2
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME            IR FUNC PROT
+ * 56b5f54f4f33826a0d4a6e9c4698c0e9  CompareAge              CompareAge(int,int)
+ * 0588f14217b11e0f77e50d03a88ba866  YaoMillionairesProblem  YaoMillionairesProblem(int,int)
+ * dd70473cf645ce1fe5e1d1430a8c28c9  TestInt32Add            TestInt32Add(int,int)
+ * d2861ce4a7b7df18ec5dd46a04ecb990  TestInt32Sub            TestInt32Sub(int,int)
+ * 0e8b39c906bb46b8d658a8ac565b2935  TestInt32Mul            TestInt32Mul(int,int)
+ * bf6537f6b8f6f4f393b17fdbb3eb3d1e  TestInt32Div            TestInt32Div(int,int)
+ * 1de0c714dfd5519da8ccef556ed06aec  TestInt32Mod            TestInt32Mod(int,int)
+ * 01ec2a137d26d3a328818bb6dd247bc4  TestInt32And            TestInt32And(int,int)
+ * c8e4cbd53934ed337a96aa2837696c12  TestInt32Orr            TestInt32Orr(int,int)
+ * 537a2e587995585592b6b06f3f71a795  TestInt32Eor            TestInt32Eor(int,int)
+ * d0dacfba19446238aecea00a00d47986  TestFloatAdd            TestFloatAdd(float,float)
+ * 3814d6bf1734de01af0a9f64c51cb908  TestFloatSub            TestFloatSub(float,float)
+ * 862e33d1d5fd866b8e74ed9ffcad2861  TestFloatMul            TestFloatMul(float,float)
+ * cd5fff286c70274df5bd0581f97a8dff  TestFloatDiv            TestFloatDiv(float,float)
+ * fc2c6c8dc4c9b58b382340c8f03e18a3  TestBool                TestBool(boolean,boolean)
+
+digest:
+ * IR NAME: MPCTestPerf
+ * IR HASH: bf67cf65d770c23cbe3d11cdc0881b58
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME  IR FUNC PROT
+ * e6f044877adb8159735ae4687d5033ad  TestPerfAdd   TestPerfAdd(int,int)
+ * 8484624bcc2012ba339b9820dde01ab1  TestPerfSub   TestPerfSub(int,int)
+ * f5f22107de0cd30fd7c3f1e8515c5594  TestPerfMul   TestPerfMul(int,int)
+ * 66bb5c1656612e45879c369e256f6718  TestPerfDiv   TestPerfDiv(int,int)
+ * 2aacc829cea70eb23385a286651ee261  TestPerfMod   TestPerfMod(int,int)
+ * cf26354f750bc74fe58413ba6a836703  TestPerfAnd   TestPerfAnd(int,int)
+ * b5f8126e821171365cde6463044fb168  TestPerfOrr   TestPerfOrr(int,int)
+ * c7c793cf2d2e42ec59ff508eda536f9c  TestPerfEor   TestPerfEor(int,int)
+ * 2512a57d2c3391fa83d4996ec4dc113a  TestPerfAll   TestPerfAll(int,int)
+
+code/com/abc/testproto/TestProto.java
+digest:
+ * IR NAME: MPCTestProto
+ * IR HASH: 70a1bb99fef875bf20f2eeeb77382beb
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME       IR FUNC PROT
+ * 5ab2b5492eebb9fffe14c94278372bff  EuclideanDistance  EuclideanDistance(Point,Point)
+ * 5990cb3c0972e165c2a3eb08cef90739  TestFooAdd01       TestFooAdd01(Foo,Foo)
+ * 9f003479e99ad875b197c2645eafdf00  TestFooAdd02       TestFooAdd02(Foo,int)
+ * 60e7e4c1bc1dbbeb5c9c976911cb93aa  TestFooAdd03       TestFooAdd03(int,int)
+ * 913b11f78f06e4a1d58688a4190afade  TestBarAdd01       TestBarAdd01(Bar,Bar)
+ * 45a8fbe6c1573f22b547cee7ee95aa93  TestBarAdd02       TestBarAdd02(Foo,Foo)
+ * 6e40f057b31a64027c214af96f5000ab  ReturnPoints       ReturnPoints(int,int)
+
+digest:
+ * IR NAME: MPCYaoMillionairesProblem
+ * IR HASH: 70ed37da195ee6ee98406ed1c6ade07b
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME            IR FUNC PROT
+ * 0588f14217b11e0f77e50d03a88ba866  YaoMillionairesProblem  YaoMillionairesProblem(int,int)
+
+digest:
+ * IR NAME: MPCSimple
+ * IR HASH: 11fa0c20711b67a5dbae28d51f795a81
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME  IR FUNC PROT
+ * d26161114e7457c9be1414e51637c641  TestAdd       TestAdd(int,int)
+
+code/com/abc/simpleproto1/SimpleProtoLite1.java
+digest:
+ * IR NAME: MPCSimpleProto1
+ * IR HASH: 42a12f59d721e7e45b10f537052667e8
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME       IR FUNC PROT
+ * 5ab2b5492eebb9fffe14c94278372bff  EuclideanDistance  EuclideanDistance(Point,Point)
+
+code/com/abc/simpleproto2/SimpleProtoLite2.java
+digest:
+ * IR NAME: MPCSimpleProto2
+ * IR HASH: ef6575ac585c1dad374d950dd83be25f
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME  IR FUNC PROT
+ * 913b11f78f06e4a1d58688a4190afade  TestBarAdd01  TestBarAdd01(Bar,Bar)
+
+code/com/abc/multiproto/FooLite.java
+code/com/abc/multiproto/BarLite.java
+digest:
+ * IR NAME: MPCFoo
+ * IR HASH: 2332d839b27d2fdd51b6bcdd5b5033fa
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME  IR FUNC PROT
+ * 5990cb3c0972e165c2a3eb08cef90739  TestFooAdd01  TestFooAdd01(Foo,Foo)
+ * 9f003479e99ad875b197c2645eafdf00  TestFooAdd02  TestFooAdd02(Foo,int)
+ * 60e7e4c1bc1dbbeb5c9c976911cb93aa  TestFooAdd03  TestFooAdd03(int,int)
+ * 913b11f78f06e4a1d58688a4190afade  TestBarAdd01  TestBarAdd01(Foo,Foo)
+ * 45a8fbe6c1573f22b547cee7ee95aa93  TestBarAdd02  TestBarAdd02(Foo,int)
+ * dd3d8b98f5a66406145926f17d0894b2  TestBarAdd03  TestBarAdd03(int,int)
+
+code/com/abc/sample/SamplesLite.java
+digest:
+ * IR NAME: MPCSamples
+ * IR HASH: 73d8164116657d9ad2fbe99c2026c595
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME            IR FUNC PROT
+ * 56b5f54f4f33826a0d4a6e9c4698c0e9  CompareAge              CompareAge(int,int)
+ * 0588f14217b11e0f77e50d03a88ba866  YaoMillionairesProblem  YaoMillionairesProblem(int,int)
+ * 5ab2b5492eebb9fffe14c94278372bff  EuclideanDistance       EuclideanDistance(Point,Point)
+ * d26161114e7457c9be1414e51637c641  TestAdd                 TestAdd(int,int)
+ * 1a83aebca27f862affd17085b84fca25  TestSub                 TestSub(int,int)
+ * 0b953bdd9a5c09fd31e6e6d42742b02a  TestMul                 TestMul(int,int)
+ * 741515664519c7f13245e307d8c66232  TestDiv                 TestDiv(int,int)
+ * 32f3009a62ab833cbf753a72c5817b0a  TestMod                 TestMod(int,int)
+ * e25f6b2f0fa3dfc63ea97887b8f46f63  TestAnd                 TestAnd(int,int)
+ * 02b7ae4250b2dd9088a4a06042807efc  TestOr                  TestOr(int,int)
+ * 5d941409f2f99b3c93cb0bea24f626ee  TestXor                 TestXor(int,int)
+ * bd79f910f487a460196bdac195b23979  TestLong                TestLong(long,long)
+ * fc2c6c8dc4c9b58b382340c8f03e18a3  TestBool                TestBool(boolean,boolean)
+ * d3ed105f859d5bd6a4413f86b33d053a  TestFloat               TestFloat(float,float)
+ * 30ba0fc8d77e422a686dd95f8e6cb5c2  TestDouble              TestDouble(double,double)
+ * 5990cb3c0972e165c2a3eb08cef90739  TestFooAdd01            TestFooAdd01(Foo,Foo)
+ * 9f003479e99ad875b197c2645eafdf00  TestFooAdd02            TestFooAdd02(Foo,int)
+ * 60e7e4c1bc1dbbeb5c9c976911cb93aa  TestFooAdd03            TestFooAdd03(int,int)
+ * 913b11f78f06e4a1d58688a4190afade  TestBarAdd01            TestBarAdd01(Bar,Bar)
+ * 45a8fbe6c1573f22b547cee7ee95aa93  TestBarAdd02            TestBarAdd02(Foo,Foo)
+ * 6e40f057b31a64027c214af96f5000ab  ReturnPoints            ReturnPoints(int,int)
+ * 3fcf6b8a4c70a01c24b2b7ca99cc86ff  PerfTest01              PerfTest01(int,int)
+
+code/com/abc/simpleandproto/SimpleAndProtoLite.java
+digest:
+ * IR NAME: MPCSimpleAndProto
+ * IR HASH: 33ae02a7c1b3502eb9239d8630737eb7
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME  IR FUNC PROT
+ * d26161114e7457c9be1414e51637c641  TestAdd       TestAdd(int,int)
+ * 91e30d5109c47916f14cdd5ba7aa1e13  TestFooAdd    TestFooAdd(Foo,Foo)
+
+digest:
+ * IR NAME: MPCTestBasicType
+ * IR HASH: 1b8ad12cc096a7daafb261e7598fb0e2
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME            IR FUNC PROT
+ * 56b5f54f4f33826a0d4a6e9c4698c0e9  CompareAge              CompareAge(int,int)
+ * 0588f14217b11e0f77e50d03a88ba866  YaoMillionairesProblem  YaoMillionairesProblem(int,int)
+ * dd70473cf645ce1fe5e1d1430a8c28c9  TestInt32Add            TestInt32Add(int,int)
+ * d2861ce4a7b7df18ec5dd46a04ecb990  TestInt32Sub            TestInt32Sub(int,int)
+ * 0e8b39c906bb46b8d658a8ac565b2935  TestInt32Mul            TestInt32Mul(int,int)
+ * bf6537f6b8f6f4f393b17fdbb3eb3d1e  TestInt32Div            TestInt32Div(int,int)
+ * 1de0c714dfd5519da8ccef556ed06aec  TestInt32Mod            TestInt32Mod(int,int)
+ * 01ec2a137d26d3a328818bb6dd247bc4  TestInt32And            TestInt32And(int,int)
+ * c8e4cbd53934ed337a96aa2837696c12  TestInt32Orr            TestInt32Orr(int,int)
+ * 537a2e587995585592b6b06f3f71a795  TestInt32Eor            TestInt32Eor(int,int)
+ * d0dacfba19446238aecea00a00d47986  TestFloatAdd            TestFloatAdd(float,float)
+ * 3814d6bf1734de01af0a9f64c51cb908  TestFloatSub            TestFloatSub(float,float)
+ * 862e33d1d5fd866b8e74ed9ffcad2861  TestFloatMul            TestFloatMul(float,float)
+ * cd5fff286c70274df5bd0581f97a8dff  TestFloatDiv            TestFloatDiv(float,float)
+ * fc2c6c8dc4c9b58b382340c8f03e18a3  TestBool                TestBool(boolean,boolean)
+
+digest:
+ * IR NAME: MPCTestPerf
+ * IR HASH: bf67cf65d770c23cbe3d11cdc0881b58
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME  IR FUNC PROT
+ * e6f044877adb8159735ae4687d5033ad  TestPerfAdd   TestPerfAdd(int,int)
+ * 8484624bcc2012ba339b9820dde01ab1  TestPerfSub   TestPerfSub(int,int)
+ * f5f22107de0cd30fd7c3f1e8515c5594  TestPerfMul   TestPerfMul(int,int)
+ * 66bb5c1656612e45879c369e256f6718  TestPerfDiv   TestPerfDiv(int,int)
+ * 2aacc829cea70eb23385a286651ee261  TestPerfMod   TestPerfMod(int,int)
+ * cf26354f750bc74fe58413ba6a836703  TestPerfAnd   TestPerfAnd(int,int)
+ * b5f8126e821171365cde6463044fb168  TestPerfOrr   TestPerfOrr(int,int)
+ * c7c793cf2d2e42ec59ff508eda536f9c  TestPerfEor   TestPerfEor(int,int)
+ * 2512a57d2c3391fa83d4996ec4dc113a  TestPerfAll   TestPerfAll(int,int)
+
+code/com/abc/testproto/TestProtoLite.java
+digest:
+ * IR NAME: MPCTestProto
+ * IR HASH: 70a1bb99fef875bf20f2eeeb77382beb
+ * <p>
+ * IR FUNC HASH(MD5)                 IR FUNC NAME       IR FUNC PROT
+ * 5ab2b5492eebb9fffe14c94278372bff  EuclideanDistance  EuclideanDistance(Point,Point)
+ * 5990cb3c0972e165c2a3eb08cef90739  TestFooAdd01       TestFooAdd01(Foo,Foo)
+ * 9f003479e99ad875b197c2645eafdf00  TestFooAdd02       TestFooAdd02(Foo,int)
+ * 60e7e4c1bc1dbbeb5c9c976911cb93aa  TestFooAdd03       TestFooAdd03(int,int)
+ * 913b11f78f06e4a1d58688a4190afade  TestBarAdd01       TestBarAdd01(Bar,Bar)
+ * 45a8fbe6c1573f22b547cee7ee95aa93  TestBarAdd02       TestBarAdd02(Foo,Foo)
+ * 6e40f057b31a64027c214af96f5000ab  ReturnPoints       ReturnPoints(int,int)
+

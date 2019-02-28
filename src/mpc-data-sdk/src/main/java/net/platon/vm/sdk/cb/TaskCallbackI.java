@@ -70,18 +70,11 @@ public class TaskCallbackI extends _TaskCallbackDisp {
                 mapIRFuncs.put(ir_hash, ins);
             }
             mci = mapIRFuncs.get(ir_hash).get(func_class);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
+        } catch (ClassNotFoundException | IllegalAccessException
+                | IOException | NoSuchMethodException
+                | InvocationTargetException | InstantiationException e) {
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return mci;
     }

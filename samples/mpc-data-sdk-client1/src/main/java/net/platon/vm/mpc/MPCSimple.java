@@ -21,19 +21,19 @@ import java.util.HashMap;
  * DIGEST:
  * <p>
  * IR NAME: MPCSimple
- * IR HASH: bd4a1883b4b3f98e3da2fabc7577797f
+ * IR HASH: 1d712297c1b14699ed4496c17a11254f
  * <p>
- * IR FUNC HASH(MD5)                 IR FUNC NAME    
- * 0588f14217b11e0f77e50d03a88ba866  YaoMillionairesProblem
+ * IR FUNC HASH(MD5)                 IR FUNC NAME  IR FUNC PROT
+ * d26161114e7457c9be1414e51637c641  TestAdd       TestAdd(int,int)
  */
-
-interface mpc_ii_bd4a1883b4b3f98e3da2fabc7577797f extends IIInterface {
+ 
+interface mpc_ii_1d712297c1b14699ed4496c17a11254f extends IIInterface {
 }
 
-public class MPCSimple implements mpc_ii_bd4a1883b4b3f98e3da2fabc7577797f {
+public class MPCSimple implements mpc_ii_1d712297c1b14699ed4496c17a11254f {
     private HashMap<String, MpcCallbackInterface> funcInterfaces = new HashMap<String, MpcCallbackInterface>() {{
-        put("mpc_f_0588f14217b11e0f77e50d03a88ba866_01", new MPCSimple_YaoMillionairesProblem_int_int_01());
-        put("mpc_f_0588f14217b11e0f77e50d03a88ba866_02", new MPCSimple_YaoMillionairesProblem_int_int_02());
+        put("mpc_f_d26161114e7457c9be1414e51637c641_01", new MPCSimple_TestAdd_int_int_01());
+        put("mpc_f_d26161114e7457c9be1414e51637c641_02", new MPCSimple_TestAdd_int_int_02());
     }};
 
     public MpcCallbackInterface getInstance(String instance_hash) {
@@ -47,9 +47,9 @@ public class MPCSimple implements mpc_ii_bd4a1883b4b3f98e3da2fabc7577797f {
         return funcInterfaces;
     }
 
-    abstract class MpcCallbackBase_bd4a1883b4b3f98e3da2fabc7577797f implements MpcCallbackInterface {
+    abstract class MpcCallbackBase_1d712297c1b14699ed4496c17a11254f implements MpcCallbackInterface {
         public abstract byte[] inputImpl(final InputRequestPara para);
-
+        
         public byte[] input(final InputRequestPara para) {
             // TODO: do what you want to do, before call inputImpl
             return inputImpl(para);
@@ -64,45 +64,45 @@ public class MPCSimple implements mpc_ii_bd4a1883b4b3f98e3da2fabc7577797f {
         }
     }
 
-    abstract class mpc_i_bd4a1883b4b3f98e3da2fabc7577797f extends MpcCallbackBase_bd4a1883b4b3f98e3da2fabc7577797f {
+    abstract class mpc_i_1d712297c1b14699ed4496c17a11254f extends MpcCallbackBase_1d712297c1b14699ed4496c17a11254f {
     }
-
-    abstract class mpc_f_0588f14217b11e0f77e50d03a88ba866_01 extends mpc_i_bd4a1883b4b3f98e3da2fabc7577797f {
+    
+    abstract class mpc_f_d26161114e7457c9be1414e51637c641_01 extends mpc_i_1d712297c1b14699ed4496c17a11254f {
         public byte[] input_x_default(){
             return Data.Int32(0);
         }
     }
 
-    abstract class mpc_f_0588f14217b11e0f77e50d03a88ba866_02 extends mpc_i_bd4a1883b4b3f98e3da2fabc7577797f {
+    abstract class mpc_f_d26161114e7457c9be1414e51637c641_02 extends mpc_i_1d712297c1b14699ed4496c17a11254f {
         public byte[] input_x_default(){
             return Data.Int32(0);
         }
     }
 
-
+    
     /**
-     * YaoMillionairesProblem(int,int)
+     * TestAdd(int,int)
      */
-    final class MPCSimple_YaoMillionairesProblem_int_int_01 extends mpc_f_0588f14217b11e0f77e50d03a88ba866_01 {
+    final class MPCSimple_TestAdd_int_int_01 extends mpc_f_d26161114e7457c9be1414e51637c641_01 {
         public byte[] inputImpl(final InputRequestPara para) {
             int ret_value = 0;
             // TODO: assemble data
 
-            ret_value = 1000000; // Alice has 1 million
+            ret_value = 1234;
 
             return Data.Int32(ret_value);
         }
     }
 
     /**
-     * YaoMillionairesProblem(int,int)
+     * TestAdd(int,int)
      */
-    final class MPCSimple_YaoMillionairesProblem_int_int_02 extends mpc_f_0588f14217b11e0f77e50d03a88ba866_02 {
+    final class MPCSimple_TestAdd_int_int_02 extends mpc_f_d26161114e7457c9be1414e51637c641_02 {
         public byte[] inputImpl(final InputRequestPara para) {
             int ret_value = 0;
             // TODO: assemble data
 
-            ret_value = 2000000; // Bob has 2 million
+            ret_value = 5678;
 
             return Data.Int32(ret_value);
         }

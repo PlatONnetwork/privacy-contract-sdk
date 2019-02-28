@@ -1,13 +1,16 @@
 package net.platon.vm.sdk.client;
 
-import com.google.common.primitives.Bytes;
 import com.google.protobuf.CodedOutputStream;
 import net.platon.vm.proto.Mpctype;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class Data {
+    private static final Logger logger = LoggerFactory.getLogger(AppClient.class.getName());
+
     public static byte[] Concat(byte[]... bytes) {
         assert bytes.length >= 2;
         // len1 data1 len2 data2 ...
@@ -31,7 +34,8 @@ public class Data {
             cos.writeBoolNoTag(val);
             cos.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return baos.toByteArray();
     }
@@ -43,7 +47,8 @@ public class Data {
             cos.writeInt32NoTag(val);
             cos.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return baos.toByteArray();
     }
@@ -55,7 +60,8 @@ public class Data {
             cos.writeUInt32NoTag(val);
             cos.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return baos.toByteArray();
     }
@@ -67,7 +73,8 @@ public class Data {
             cos.writeInt64NoTag(val);
             cos.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return baos.toByteArray();
     }
@@ -79,7 +86,8 @@ public class Data {
             cos.writeUInt64NoTag(val);
             cos.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return baos.toByteArray();
     }
@@ -91,7 +99,8 @@ public class Data {
             cos.writeFloatNoTag(val);
             cos.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return baos.toByteArray();
     }
@@ -103,7 +112,8 @@ public class Data {
             cos.writeDoubleNoTag(val);
             cos.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return baos.toByteArray();
     }
@@ -114,7 +124,8 @@ public class Data {
             cos.writeStringNoTag(val);
             cos.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return baos.toByteArray();
     }

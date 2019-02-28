@@ -21,7 +21,8 @@ public class ConfigInfo {
         try {
             commandLine = parser.parse(options, args);
         } catch (ParseException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
             System.exit(1);
         }
 

@@ -25,7 +25,6 @@ final public class AppClient extends Ice.Application {
 
     public AppClient(final ConfigInfo cfgInfo) {
         this.cfgInfo = cfgInfo;
-
     }
 
     private String getAddress() throws IOException, CipherException {
@@ -49,12 +48,12 @@ final public class AppClient extends Ice.Application {
                     Thread.sleep(3000);
                     server.ice_ping();
 
-                    logger.info("ping ... memory: max {}, total {}, free {}", Runtime.getRuntime().maxMemory(), Runtime.getRuntime().totalMemory(), Runtime.getRuntime().freeMemory());
+                    logger.debug("ping ... memory: max {}, total {}, free {}", Runtime.getRuntime().maxMemory(), Runtime.getRuntime().totalMemory(), Runtime.getRuntime().freeMemory());
                 } catch (Ice.ConnectionRefusedException e) {
                     ping_rest_times--;
                     logger.warn("[Connection Refused] ice ping failed, rest {}", ping_rest_times);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    logger.error("Exception: ", e);
                 }
             }
         }
@@ -68,7 +67,7 @@ final public class AppClient extends Ice.Application {
                 int times = 0;
                 do {
                     try {
-                        logger.info("memory: max {}, total {}, free {}", Runtime.getRuntime().maxMemory(), Runtime.getRuntime().totalMemory(), Runtime.getRuntime().freeMemory());
+                        logger.debug("memory: max {}, total {}, free {}", Runtime.getRuntime().maxMemory(), Runtime.getRuntime().totalMemory(), Runtime.getRuntime().freeMemory());
                         server = TaskSessionPrxHelper.checkedCast(
                                 communicator().propertyToProxy("TaskCallback.Proxy")
                                         .ice_twoway().ice_timeout(-1).ice_secure(false));
@@ -77,7 +76,8 @@ final public class AppClient extends Ice.Application {
                         try {
                             Thread.sleep(3000);
                         } catch (InterruptedException ee) {
-                            ee.printStackTrace();
+                            //ee.printStackTrace();
+                            logger.error("Exception: ", ee);
                         }
                         continue;
                     }
@@ -90,6 +90,7 @@ final public class AppClient extends Ice.Application {
 
                 ///
                 Ice.ObjectAdapter adapter = communicator().createObjectAdapterWithEndpoints("cc", "default -h 0.0.0.0");
+                //Ice.ObjectAdapter adapter = communicator().createObjectAdapter("Callback.Client");
 
                 adapter.add(new TransactionCallbackI(cfgInfo), communicator().stringToIdentity("TransactionCallbackReceiver"));
                 adapter.add(new TaskCallbackI(cfgInfo), communicator().stringToIdentity("TaskCallbackReceiver"));
@@ -106,8 +107,9 @@ final public class AppClient extends Ice.Application {
                     address = getAddress();
                     logger.info("address:{}", address);
                 } catch (IOException | CipherException e) {
-                    e.printStackTrace();
                     logger.error("can not get address!");
+                    //e.printStackTrace();
+                    logger.error("Exception: ", e);
                     return 1;
                 }
                 server.registTransactionCallback(address, transactionReceiver);
@@ -123,7 +125,8 @@ final public class AppClient extends Ice.Application {
                 try {
                     ping.join();
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    //e.printStackTrace();
+                    logger.error("Exception: ", e);
                 }
             } catch (Ice.ConnectionRefusedException e) {
                 shutdownOnInterrupt();
@@ -155,13 +158,14 @@ final public class AppClient extends Ice.Application {
         }
         long times = 0;
         while (true) {
-            logger.info("memory: max {}, total {}, free {}", Runtime.getRuntime().maxMemory(), Runtime.getRuntime().totalMemory(), Runtime.getRuntime().freeMemory());
+            logger.debug("memory: max {}, total {}, free {}", Runtime.getRuntime().maxMemory(), Runtime.getRuntime().totalMemory(), Runtime.getRuntime().freeMemory());
             int ret = main(AppClient.class.toString(), args, cfgInfo.iceCfgFile);
             logger.info("client reconnect to server, times: {}", (++times));
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
+                logger.error("Exception: ", e);
             }
         }
     }

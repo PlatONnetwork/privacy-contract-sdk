@@ -110,7 +110,8 @@ public class ProxyClient {
         try {
             this.credentials = WalletUtils.loadCredentials(walletPass, walletPath);
         } catch (IOException | CipherException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         assert credentials != null;
         this.priHexString = bytesToHex(credentials.getEcKeyPair().getPrivateKey().toByteArray());
@@ -121,7 +122,8 @@ public class ProxyClient {
         try {
             this.credentials = WalletUtils.loadCredentials(walletPass, walletPath);
         } catch (IOException | CipherException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         assert credentials != null;
         this.priHexString = bytesToHex(credentials.getEcKeyPair().getPrivateKey().toByteArray());
@@ -135,7 +137,7 @@ public class ProxyClient {
 
     // -------------------------
     // -------------------------
-    public String startCalc(String method, int retry) {
+    protected String startCalc(String method, int retry) {
         logger.info("method:{}", method);
         byte[] tx_type = {0, 0, 0, 0, 0, 0, 0, 5};
         RlpType rt_type = RlpString.create(tx_type);
@@ -143,7 +145,7 @@ public class ProxyClient {
         RlpType rt_extra = RlpString.create("");
         RlpList r = new RlpList(rt_type, rt_method, rt_extra);
         String data = Numeric.toHexString(RlpEncoder.encode(r));
-        logger.info("data:{}", data);
+        logger.debug("data:{}", data);
 
         String transactionHash = null;
         try {
@@ -158,7 +160,8 @@ public class ProxyClient {
                 sleep(1000);
             } while (retry-- > 0);
         } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
 
         return transactionHash;
@@ -176,7 +179,8 @@ public class ProxyClient {
         try {
             s = web3j.ethCall(Transaction.createEthCallTransaction(getFrom(), getTo(), data), DefaultBlockParameterName.LATEST).send().getValue();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return s;
     }
@@ -187,10 +191,9 @@ public class ProxyClient {
         RlpType rt_func = RlpString.create("get_ir_data");
         RlpList r = new RlpList(rt_type, rt_func);
         String data = Numeric.toHexString(RlpEncoder.encode(r));
-        logger.info("data:{}", data);
+        logger.debug("data:{}", data);
 
         String s = ethCall(data);
-        System.out.println(s);
 
         assert s.length() > 128;
         String tmpdata = s.substring(2);
@@ -199,9 +202,6 @@ public class ProxyClient {
 
         String sdata1 = tmpdata.substring(128, datalen + 128);
         String sdata2 = new String(hexToByteArray(sdata1));
-
-        ir_hash = DigestUtils.md5Hex(hexToByteArray(sdata2));
-        logger.info("ir_hash:{}", ir_hash);
 
         return sdata2;
     }
@@ -219,10 +219,9 @@ public class ProxyClient {
         RlpType rt_method = RlpString.create(method);
         RlpList r = new RlpList(rt_type, rt_func, rt_method);
         String data = Numeric.toHexString(RlpEncoder.encode(r));
-        logger.info("data:{}", data);
+        logger.debug("data:{}", data);
 
         String s = ethCall(data);
-        System.out.println(s);
 
         return Long.parseLong(s.substring(58), 16);
     }
@@ -234,10 +233,9 @@ public class ProxyClient {
         RlpType rt_taskid = RlpString.create(task_id);
         RlpList r = new RlpList(rt_type, rt_func, rt_taskid);
         String data = Numeric.toHexString(RlpEncoder.encode(r));
-        logger.info("data:{}", data);
+        logger.debug("data:{}", data);
 
         String s = ethCall(data);
-        System.out.println(s);
 
         return Long.parseLong(s.substring(58), 16);
     }
@@ -267,12 +265,13 @@ public class ProxyClient {
                             if (timeout == 0) {
                                 break; // only call once
                             }
-                            logger.info("tr not present now, 1 second later, try again");
+                            logger.info("get receipt not present now, 1 second later, try again");
                             sleep(1000);
                         }
                     }
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    //e.printStackTrace();
+                    logger.error("Exception: ", e);
                 }
                 return transactionReceipt;
             }
@@ -282,11 +281,11 @@ public class ProxyClient {
             Future<TransactionReceipt> future = exec.submit(call);
             transactionReceipt = future.get(timeout == 0 ? 5000 : getTimeout(timeout), TimeUnit.MILLISECONDS);
         } catch (TimeoutException ex) {
-            System.out.println("timeout.");
-            ex.printStackTrace();
+            logger.info("getTransactionReceipt timeout.");
+            //ex.printStackTrace();
         } catch (Exception e) {
-            System.out.println("failed.");
-            e.printStackTrace();
+            logger.warn("getTransactionReceipt failed. {}", e.getMessage());
+            //e.printStackTrace();
         } finally {
             exec.shutdown();
         }
@@ -301,13 +300,13 @@ public class ProxyClient {
         List<Log> tlog = transactionReceipt.getLogs();
         for (Log l : tlog) {
             String data = l.getData();
-            logger.info("log data:{}", data);
+            logger.debug("log data:{}", data);
             RlpList rl = RlpDecoder.decode(Numeric.hexStringToByteArray(data));
             RlpType rt = rl.getValues().get(0);
             RlpType rrl = ((RlpList) rt).getValues().get(1);
             String sss = ((RlpString) rrl).asString();
             taskid = new String(Numeric.hexStringToByteArray(sss));
-            logger.info("log taskid:{}", taskid);
+            logger.debug("log taskid:{}", taskid);
         }
         return taskid;
     }
@@ -327,7 +326,7 @@ public class ProxyClient {
         RlpType rt_taskid = RlpString.create(taskId);
         RlpList r = new RlpList(rt_type, rt_func, rt_taskid);
         String data = Numeric.toHexString(RlpEncoder.encode(r));
-        logger.info("data:{}", data);
+        logger.debug("data:{}", data);
 
         String result = null;
         {
@@ -337,14 +336,14 @@ public class ProxyClient {
                     String result = null;
                     while (true) {
                         result = ethCall(data);
-                        logger.info("result:{}", result);
+                        logger.debug("result:{}", result);
                         if (result.length() > 130) {
                             break;
                         } else {
                             if (timeout == 0) {
                                 break; // only call once
                             }
-                            logger.info("r not present now, 1 second later, try again");
+                            logger.debug("get task id not present now, 1 second later, try again");
                             sleep(1000);
                         }
                     }
@@ -356,11 +355,11 @@ public class ProxyClient {
                 Future<String> future = exec.submit(call);
                 result = future.get(timeout == 0 ? 5000 : getTimeout(timeout), TimeUnit.MILLISECONDS);
             } catch (TimeoutException ex) {
-                System.out.println("timeout.");
-                ex.printStackTrace();
+                logger.info("getResultByTaskId timeout.");
+                //ex.printStackTrace();
             } catch (Exception e) {
-                System.out.println("failed.");
-                e.printStackTrace();
+                logger.warn("getResultByTaskId failed. {}", e.getMessage());
+                //e.printStackTrace();
             } finally {
                 exec.shutdown();
             }
@@ -376,7 +375,7 @@ public class ProxyClient {
 
         String sdata1 = tmpdata.substring(128, datalen + 128);
         String sdata2 = new String(hexToByteArray(sdata1));
-        logger.info("cipher data:{}", sdata2);
+        logger.debug("cipher data:{}", sdata2);
 
         return sdata2;
     }
@@ -407,7 +406,8 @@ public class ProxyClient {
             String priHexString = bytesToHex(credentials.getEcKeyPair().getPrivateKey().toByteArray());
             return getPlainText(cipher, priHexString);
         } catch (IOException | CipherException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("Exception: ", e);
         }
         return null;
     }

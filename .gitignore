@@ -12,3 +12,6 @@ target
 
 sftp-config.json
 
+.settings
+.project
+.classpath

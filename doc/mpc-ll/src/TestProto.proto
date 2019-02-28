@@ -1,0 +1,26 @@
+
+syntax = "proto3";
+
+package testproto;
+option java_package = "com.abc.testproto";
+
+message Foo {
+    int32       i32	= 1;
+    float       f	= 2;
+	string		s	= 3;
+}
+
+message Bar {
+    Foo         foo = 1;
+    int32       i32 = 2;
+    float       f   = 3;
+}
+
+message Point {
+    int32       x	= 1;
+    int32       y	= 2;
+}
+
+message Points {
+    repeated Point	points	= 1;
+}
