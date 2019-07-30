@@ -56,7 +56,7 @@
         <dependency>
             <groupId>org.ethereum</groupId>
             <artifactId>ethereumj-core</artifactId>
-            <version>1.7.2-RELEASE</version>
+            <version>1.12.0-RELEASE</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.ethereum</groupId>
